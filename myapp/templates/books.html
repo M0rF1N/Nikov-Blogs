@@ -1,0 +1,16 @@
+{% extends "basebook.html" %}
+{% block content_books %}
+ {% for book in books %}
+<article class="media content-section">
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2" href="#">{{ book.book_author }}</a>
+        <small class="text-muted">{{ book.book_date_posted|date:"F d, Y" }}</small>
+      </div>
+      <h2><a class="article-title" href="#"> Заглавие : {{ book.book_title }}</a></h2>
+	  <h5><a class="article-title" href="#"> Цена : {{ book.book_price }}</a></h5>
+      <p class="article-content"> Описание: {{ book.book_content }}</p>
+    </div>
+  </article>
+  {% endfor %}
+{% endblock content_books %}
